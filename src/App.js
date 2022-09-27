@@ -5,9 +5,9 @@ import List from './list';
 function App() {
   return (
     <>
-    <Header />
-    <Hero />
-    <List />
+      <Header />
+      <Hero />
+      <List />
     </>
   );
 }
