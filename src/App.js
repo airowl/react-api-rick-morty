@@ -1,11 +1,13 @@
-import './App.css';
+import Header from './header';
+import Hero from './hero';
+import List from './list';
 
 function App() {
   return (
     <>
-    {/* header */}
-    {/* hero */}
-    {/* section lists */}
+    <Header />
+    <Hero />
+    <List />
     </>
   );
 }
