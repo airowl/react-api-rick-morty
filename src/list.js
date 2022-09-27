@@ -2,8 +2,10 @@ import React from 'react'
 
 const List = () => {
   return (
-    <section>
-      List
+    <section className='container'>
+      <div className='row'>
+        {/* lista */}
+      </div>
     </section>
   )
 }
