@@ -1,11 +1,11 @@
 import React from 'react';
-import './header.scss';
+import './style.scss';
 
 const Header = () => {
   return (
     <header>
       <div className='container h-100 d-flex align-items-center justify-content-center'>
-            <h1>Rick and Morty</h1>
+        <h1>Rick and Morty</h1>
       </div>
     </header>
   )
