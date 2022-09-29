@@ -1,5 +1,4 @@
 import React from 'react'
-import Nav from './nav';
 import Card from './card';
 
 const List = (props) => {

@@ -9,21 +9,23 @@ function App() {
   const [list, setList] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(null);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
 
     (async () => {
-      await fetch(`https://rickandmortyapi.com/api/character/?page=${page}`)
+      await fetch(`https://rickandmortyapi.com/api/character/?page=${page}&name=${search}`)
         .then(res => res.json())
         .then(res => {
           setList(res.results);
           setTotalPage(res.info.pages);
-          console.log(res.info.pages);
         })
-        .catch(error => console.error(error));
+        .catch(error => {
+          console.error(error)
+        });
     })();
 
-  }, [page]);
+  }, [page, search]);
   
   const handleNext = (ev) => {
     ev.preventDefault();
@@ -47,10 +49,14 @@ function App() {
     setPage(n);
   }
 
+  const handleSearch = (text) => {
+    setSearch(text);
+  }
+
   return (
     <>
       <Header />
-      <Hero />
+      <Hero onHandleSearch={handleSearch} val={search}/>
       <Nav onHandleNext={handleNext} onHandlePrevious={handlePrevious} totalPage={totalPage} actualPage={page} onHandlePage={handlePage}/>
       <List res={list}/>
       <Nav onHandleNext={handleNext} onHandlePrevious={handlePrevious} totalPage={totalPage} actualPage={page}/>
