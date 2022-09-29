@@ -1,4 +1,5 @@
 import React from 'react'
+import Nav from './nav';
 import Card from './card';
 
 const List = (props) => {
@@ -9,7 +10,6 @@ const List = (props) => {
         {
           res.map((e, i) => (
             <Card res={e} key={i}/>
-            
           ))
         }
       </div>
