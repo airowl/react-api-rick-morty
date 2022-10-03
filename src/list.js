@@ -5,7 +5,7 @@ const List = (props) => {
   const res = props.res;
   return (
     <section className='container'>
-      <div className='row'>
+      <div className='row justify-content-center'>
         {
           res.map((e, i) => (
             <Card res={e} key={i}/>
